@@ -1,20 +1,43 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🛡️ Smart AI Camera - Intellektual Ta'lim Monitoring Tizimi
 
-# Run and deploy your AI Studio app
+**Smart AI Camera** — bu sun'iy intellekt (Google Gemini 3) yordamida o'quvchilarning darsdagi davomati va xatti-harakatlarini real vaqt rejimida tahlil qiluvchi yuqori texnologik tizim. Loyiha dars jarayonini raqamlashtirish va ta'lim sifatini avtomatik baholash uchun mo'ljallangan.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/drive/1MFc8yswSNLlytU0X1BYvVt6V9qdkFXqc
+## 🚀 Asosiy Imkoniyatlar
 
-## Run Locally
+*   **Multi-Face Recognition (Ko'p yuzli tanib olish):** Kamera kadridagi bir nechta o'quvchini bir vaqtning o'zida identifikatsiya qilish.
+*   **Xulq-atvor Tahlili (Behavioral Analysis):** O'quvchining holatini 5 xil toifada baholash:
+    *   `Active` (Faol ishtirok etmoqda)
+    *   `Attentive` (Diqqat bilan tinglamoqda)
+    *   `Inactive` (Nofaol yoki chalg'igan)
+    *   `Not Present` (Darsda yo'q)
+    *   `Unknown` (Aniq emas)
+*   **Real-time Bounding Boxes:** Har bir aniqlangan yuz atrofida rangli indikatorlar (interaktiv ramkalar) ko'rsatiladi.
+*   **Analytics Dashboard:** Har bir o'quvchi uchun individual faollik foizlari va vaqt chizig'i (timeline).
+*   **Precision Enrollment:** O'quvchilarni bazaga qo'shishda bir nechta rasm yordamida 99% aniqlikka erishish.
 
-**Prerequisites:**  Node.js
+---
 
+## 🛠 Texnologik Stek
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+*   **Frontend:** React 19, TypeScript
+*   **AI Engine:** Google Gemini 3 Flash Preview (Eng tezkor multimodal model)
+*   **Styling:** Tailwind CSS (Modern va javob beruvchi UI)
+*   **Routing:** React Router 7
+*   **API Interface:** @google/genai SDK
+
+---
+
+## 📂 Loyiha Tuzilishi
+
+```text
+├── services/
+│   └── geminiService.ts    # Gemini API bilan aloqa va Prompt injeneriyasi
+├── components/
+│   ├── Dashboard.tsx       # Umumiy statistika va o'quvchilar ro'yxati
+│   ├── Enrollment.tsx      # O'quvchilarni bazaga rasm bilan qo'shish
+│   ├── LiveAnalysis.tsx    # Kamera oqimi va AI tahlili (Asosiy modul)
+│   └── StudentDetailModal.tsx # Har bir o'quvchining chuqur tahlili
+├── types.ts                # Ma'lumotlar modellari va interfeyslar
+└── App.tsx                 # Asosiy yo'naltirish va API kalit nazorati
