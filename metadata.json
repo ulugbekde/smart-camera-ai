@@ -1,0 +1,7 @@
+{
+  "name": "Smart AI Camera",
+  "description": "Multi-face recognition and behavior analysis system using Gemini AI for precision tracking.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
